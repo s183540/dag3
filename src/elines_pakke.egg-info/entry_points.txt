@@ -1,0 +1,3 @@
+[console_scripts]
+evaluate = elines_pakke.evaluate:evaluate
+train = elines_pakke.train:train

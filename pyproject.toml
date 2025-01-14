@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elines_pakke"
+version = "0.0.1"
+description = "use of cookiecutter"
+authors = [
+  { name = "s183540", email = "your@email.com" },
+]
+
+keywords = ["machine learning", "MLOps"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.scripts]
+train = "elines_pakke.train:train"
+evaluate = "elines_pakke.evaluate:evaluate"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = {file = ['requirements_dev.txt']}
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["I","F401"]
+
+[tool.coverage.run]
+omit = ["tests/*"]
